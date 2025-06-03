@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title><link rel="stylesheet" href="style.css">
+</head>
+<body> 
+    <header>
+        <p>Sistema.</p>
+        <b> &nbsp; Educacional &nbsp; </b>
+        <p>.edu</p>
+    </header>
+
+    <!--Barra de Navegação -->
+    <nav>       
+        <a href="#">Início</a>
+        <a href="#">Alunos</a>
+        <a href="#">Turma</a>
+        <a href="#">Empresa</a>
+    </nav>
+
+    <p id="legendaNav">Lançamentos > Notas</p>
+
+    <section>
+        <div id="linha"> 
+            <p>Quantidade de Notas:</p>
+            <select name="selectQuantidadeNota" id="selectQuantidadeNota">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </div>
+
+        <div id="linha">
+            <input type="number" name="entradaN1" id="entradaN1"> +
+            <input type="number" name="entradaN2" id="entradaN2"> +
+            <input type="number" name="entradaN3" id="entradaN3">
+        </div>
+
+        <div id="linha">
+            <input type="button" value="Salvar Notas" id="botaoSalvarNotas">
+        </div>
+
+        <div id="resultado">...</div>
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
