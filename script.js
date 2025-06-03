@@ -1,11 +1,23 @@
 let selectQuantidadeNota = document.querySelector("select#selectQuantidadeNota") ;
-selectQuantidadeNota.addEventListener('onchange' , alterarQuantidadeNota);
+selectQuantidadeNota.addEventListener('change' , alterarQuantidadeNota);
 
 
 // --- { GRAVAR CONFIGURAÇÕES DE NOTAS }
 function alterarQuantidadeNota() {
-    resultado.innerHTML = ` Tudo OK `
+    
+    let entradaTodasNotas = [entradaN1 , entradaN2 , entradaN3] ;
+    let quantidadeSelecionada  = parseInt(selectQuantidadeNota.value);
 
+    entradaTodasNotas.forEach((input, index) => {
+            // O índice é 0-based, então para N1 (index 0), N2 (index 1), N3 (index 2)
+            // Se o índice + 1 (que representa o número da nota) for maior que a quantidade selecionada, desabilita.
+        if (index + 1 > quantidadeSelecionada) {
+            input.disabled = true;
+               input.value = ''; // Limpa o valor do input desabilitado
+        } else {
+            input.disabled = false;
+        }
+        });
 }
 
 // --- { SALVAR NOTAS }
@@ -25,12 +37,9 @@ function salvarNotas(){
     if (N1 == ' '|| N2 == ' ' || N3 == ' ') {
         window.alert (` [ ERRO ] Preencha todos os campos `)
     } else {
-        let soma = (N1 + N2 + N3) /3
-        resultado.innerHTML = `Nota = ${soma} `
+        let media = (N1 + N2 + N3) /3
+        resultado.innerHTML = `Média = ${media} `
     }
-
-    
-    
 
 }
 
